@@ -1,10 +1,10 @@
 export class car {
-    constructor(pavadinimas, modelis, kuroTalpa, kuroSanaudos) {
+    constructor(pavadinimas, modelis, spalva, kuroTalpa, kuroSanaudos) {
         this.name = pavadinimas;
         this.model = modelis;
-        this.color = 'red';
-        this.fuelTank = kuroTalpa;
-        this.fuelConsumption = kuroSanaudos;
+        this.color = spalva;
+        this.fuelTank = kuroTalpa + ' Liters';
+        this.fuelConsumption = kuroSanaudos + ' Liters';
         this.engineRunning = false;
         this.speed = 0;
     }
@@ -30,41 +30,48 @@ export class car {
     }
 
     startRiding() {
+        let fuelTank = [];
+        let consumption = [];
         if (this.engineRunning === false) {
             return `Car cannot start moving, turn on the engine first.`
+        } else if (this.fuelTank === 0) {
+            return `There is no fuel, fill the tank first.`
         } else {
             this.speed = 50;
-            this.fuelConsumption *= 2;
-            this.fuelTank -= this.fuelConsumption
-        }
+            this.fuelConsumption = ((this.fuelConsumption.split(' ')[0]) * 2) + ' Liters';
+            this.fuelTank = (this.fuelTank.split(' ')[0] - this.fuelConsumption.split(' ')[0]) + ' Liters';
 
-        return `Car has started to move.`
+            return `Car has started to move.`
+        }
     }
     continueTheRide() {
         if (this.engineRunning === false) {
             return `Turn on the engine and start moving first.`
         } else {
-            this.fuelConsumption /= 2;
-            this.fuelTank -= this.fuelConsumption;
+            this.fuelConsumption = (this.fuelConsumption.split(' ')[0]) / 2 + ' Liters';
+            this.fuelTank = (this.fuelTank.split(' ')[0] - this.fuelConsumption.split(' ')[0]) + ' Liters';
         }
         return `Car is going.`
 
     }
     stopTheCar() {
+        if (parseFloat(this.fuelTank.split(' ')[0]) === 0) {
+            return `The car stopped, because the fuel tank is empty.`
+        }
         this.speed = 0;
         return `Car successfully stoped.`
     }
 
     fillTank() {
         let numbOfLitersFilled = 0;
-        if (this.fuelTank === 60) {
+        if (parseFloat(this.fuelTank.split(' ')[0]) === 60) {
             return `Fuel tank already full`
         } else {
-            numbOfLitersFilled = 60 - this.fuelTank;
-            this.fuelTank += numbOfLitersFilled;
+            numbOfLitersFilled = 60 - this.fuelTank.split(' ')[0];
+            this.fuelTank = parseFloat((this.fuelTank.split(' ')[0])) + numbOfLitersFilled + ' Liters';
 
         }
-        return `The car was filled ${numbOfLitersFilled} litters.`
+        return `The car was filled ${numbOfLitersFilled} liters.`
 
     }
 
