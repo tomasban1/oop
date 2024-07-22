@@ -33,7 +33,7 @@ export class car {
     startRiding() {
         if (this.engineRunning === false) {
             return `Car cannot start moving, turn on the engine first.`
-        } else if (this.fuelTank === 0) {
+        } else if (this.fuelLeft.split(' ')[0] <= 0) {
             return `There is no fuel, fill the tank first.`
         } else {
             this.speed = 50;
@@ -46,6 +46,8 @@ export class car {
     continueTheRide() {
         if (this.engineRunning === false) {
             return `Turn on the engine and start moving first.`
+        } else if (this.fuelLeft.split(' ')[0] <= 0) {
+            return `Fuel tank empty.`
         } else {
             this.fuelConsumption = '5 Liters';
             this.fuelLeft = (this.fuelLeft.split(' ')[0] - this.fuelConsumption.split(' ')[0]) + ' Liters';
