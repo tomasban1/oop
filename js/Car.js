@@ -47,6 +47,7 @@ export class car {
         if (this.engineRunning === false) {
             return `Turn on the engine and start moving first.`
         } else if (this.fuelLeft.split(' ')[0] <= 0) {
+            this.speed = 0;
             return `Fuel tank empty.`
         } else {
             this.fuelConsumption = '5 Liters';
@@ -57,6 +58,7 @@ export class car {
     }
     stopTheCar() {
         if (parseFloat(this.fuelLeft.split(' ')[0]) === 0) {
+            this.speed = 0;
             return `The car stopped, because the fuel tank is empty.`
         }
         this.speed = 0;
