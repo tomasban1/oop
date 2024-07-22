@@ -48,7 +48,7 @@ export class car {
         if (this.engineRunning === false) {
             return `Turn on the engine and start moving first.`
         } else {
-            this.fuelConsumption = (this.fuelConsumption.split(' ')[0]) / 2 + ' Liters';
+            this.fuelConsumption = '5 Liters';
             this.fuelTank = (this.fuelTank.split(' ')[0] - this.fuelConsumption.split(' ')[0]) + ' Liters';
         }
         return `Car is going.`
@@ -62,10 +62,16 @@ export class car {
         return `Car successfully stoped.`
     }
 
+    fuelLeft() {
+        return `The fueal tank has ${this.fuelTank} of fuel left.`
+    }
+
     fillTank() {
         let numbOfLitersFilled = 0;
         if (parseFloat(this.fuelTank.split(' ')[0]) === 60) {
             return `Fuel tank already full`
+        } else if (this.speed > 0) {
+            return `Stop the car before filling up the tank.`
         } else {
             numbOfLitersFilled = 60 - this.fuelTank.split(' ')[0];
             this.fuelTank = parseFloat((this.fuelTank.split(' ')[0])) + numbOfLitersFilled + ' Liters';

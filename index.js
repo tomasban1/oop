@@ -32,14 +32,11 @@ console.log(Audi);
 console.log(Audi.engineOn());
 console.log(Audi.startRiding());
 console.log(Audi.continueTheRide());
+console.log(Audi.continueTheRide());
 console.log(Audi.stopTheCar());
 console.log(Audi.engineOff());
+console.log(Audi.fuelLeft());
 console.log(Audi.fillTank());
 console.log(Audi);
-console.log(Audi.continueTheRide());
-console.log(Audi);
-
-
-
 
 
