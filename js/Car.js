@@ -1,10 +1,10 @@
 export class car {
-    constructor(pavadinimas, modelis, spalva, bakoTuris, kuroTalpa, kuroSanaudos) {
+    constructor(pavadinimas, modelis, spalva, bakoTuris, kuroLiko, kuroSanaudos) {
         this.name = pavadinimas;
         this.model = modelis;
         this.color = spalva;
         this.fullTank = bakoTuris + ' Liters'
-        this.fuelLeft = kuroTalpa + ' Liters';
+        this.fuelLeft = kuroLiko + ' Liters';
         this.fuelConsumption = kuroSanaudos + ' Liters';
         this.engineRunning = false;
         this.speed = 0;
