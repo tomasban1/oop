@@ -25,18 +25,17 @@ console.log(brisius.birthday());
 console.log(brisius.birthday());
 console.clear();
 
-const Audi = new car('Audi', 80, 'Red', 60, 5)
+const Audi = new car('Audi', 80, 'Red', 60, 60, 5)
 console.log(Audi.name);
 console.log(Audi);
 
 console.log(Audi.engineOn());
 console.log(Audi.startRiding());
 console.log(Audi.continueTheRide());
-console.log(Audi.continueTheRide());
 console.log(Audi.stopTheCar());
-console.log(Audi.engineOff());
-console.log(Audi.fuelLeft());
 console.log(Audi.fillTank());
-console.log(Audi);
+console.log(Audi.engineOff());
+
+
 
 
