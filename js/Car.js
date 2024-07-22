@@ -30,8 +30,6 @@ export class car {
     }
 
     startRiding() {
-        let fuelTank = [];
-        let consumption = [];
         if (this.engineRunning === false) {
             return `Car cannot start moving, turn on the engine first.`
         } else if (this.fuelTank === 0) {
