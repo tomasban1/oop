@@ -65,13 +65,13 @@ export class car {
         return `Car successfully stoped.`
     }
 
-    fuelLeft() {
-        return `The fueal tank has ${this.fuelLeft} of fuel left.`
+    fuelLeftIn() {
+        return `The fuel tank has ${this.fuelLeft} of fuel left.`
     }
 
     fillTank() {
         let numbOfLitersFilled = 0;
-        if (parseFloat(this.fuelLeft.split(' ')[0]) === 60) {
+        if (this.fuelLeft.split(' ')[0] === this.fullTank.split(' ')[0]) {
             return `Fuel tank already full`
         } else if (this.speed > 0) {
             return `Stop the car before filling up the tank.`

@@ -39,6 +39,7 @@ console.log(Audi.startRiding());
 console.log(Audi.continueTheRide());
 console.log(Audi.fillTank());
 console.log(Audi.fillTank());
+console.log(Audi.fuelLeftIn());
 
 
 
