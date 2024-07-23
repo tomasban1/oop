@@ -1,4 +1,4 @@
-import { dog } from "./js/Dog.js";
+import { dog } from "./inheritance/Dog.js";
 import { car } from "./js/Car.js";
 const rexas = new dog('Rexas', 'black', 3);
 console.log(rexas);

@@ -5,8 +5,10 @@
   "type":"module",
   "main": "index.js",
   "scripts": {
+    "static": "node --watch ./static/index.js",
+    "animals": "node --watch animal-planet.js",
     "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --watch ./static/validations-test.js"
   },
   "keywords": [],
   "author": "",
